@@ -1,0 +1,59 @@
+
+<%- include('./partials/header.ejs') %> 
+    <%- include('./partials/nav.ejs') %>
+    <%- include('./partials/first.ejs') %> 
+
+    <div class="container-fluid pt-4 row col-12 p-5">
+        <h1 class="container text-center mb-4">
+            CONTACT US
+        </h1>
+        <div class="col-lg-6 col-sm-12 pt-4">
+            <h2>Get In Touch</h2>
+            <p>Hi there, We are available 24/7 by fax, e-mail or by phone.
+                Drop us line so we can talk futher about that.
+                For more info or inquiry about our products project,
+                and pricing please feel free to get in touch with us.
+            </p>
+        </div>
+
+        <div class="col-lg-6 row col-sm-12 pt-4">
+            <div class="col-lg-6 col-sm-12">
+                <div class="contacts col-6 toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                      <strong class="me-auto">E-mail:</strong>
+                    </div>
+                    <div class="toast-body">
+                        <a class="nav-link" href="mailto:prateek1901267@gmail.com">prateek1901267@gmail.com</a>
+                 </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <div class="contacts col-6 toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                      <strong class="me-auto">Contact:</strong>
+                    </div>
+                    <div class="toast-body">
+                        +91 9115060793
+                 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="container col-lg-6 col-sm-12 p-5">
+        <h1 class="container text-center">
+            DROP YOUR QUESTIONS HERE :)
+        </h1>
+        <form class="row pt-4" action="/admin" method="POST">
+            <label for="name">Name:</label>
+            <input for="text" placeholder="Your name.." id="name" name="name" required>
+            <label for="mail">E-mail:</label>
+            <input type="email" placeholder=" ex: abc@gmail.com" id="mail" name="mail" required>
+            <label for="body">Message:</label>
+            <textarea class="mb-4" placeholder="abacdef....." id="message" name="message" required></textarea>
+            <button type="submit" class="btn btn-outline-primary col-lg-3 col-sm-4">SUBMIT</button>
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>

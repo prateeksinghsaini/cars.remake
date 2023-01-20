@@ -1,0 +1,21 @@
+
+<%- include('./partials/header.ejs') %> 
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="container col-lg-6 col-sm-12 p-5">
+        <h1 class="container text-center">
+            ADMIN LOGIN
+        </h1>
+        <form class="row pt-4" action="/admin-login/login" method="POST">
+            <label for="name">Name:</label>
+            <input class="" for="text" id="name" name="name" required>
+            <label for="password">Password:</label>
+            <input class="mb-4" type="password" id="password" name="password" required>
+            <button type="submit" class="login btn btn-outline-primary col-lg-3 col-sm-4">LOG IN</button>
+        </form>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+
+

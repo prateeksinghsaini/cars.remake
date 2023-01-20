@@ -1,0 +1,33 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/nav.ejs') %>
+
+<div class="container text-center pt-4">
+    <button class="btn btn-outline-primary">
+        <a href="" class="delete nav-link" data-doc="<%= msg._id %> ">DELETE</a>
+    </button>
+</div>
+<div class="container text-center">
+    <h1 class="container pt-4 text-center">
+        <%= msg.name %>
+    </h1>
+    <small class="text-muted mail"><%= msg.mail %></small>
+    <p class="lead message pt-4"><%= msg.message %></p>
+</div>
+
+<%- include('./partials/footer.ejs') %>
+
+<script>
+    
+    const bin = document.querySelector('a.delete')
+    bin.addEventListener('click', (e)=>{
+        const endpt = `/admin/${bin.dataset.doc}`
+        
+        fetch(endpt, {
+            method: 'DELETE'
+        })
+        .then((response) => response.json())
+        .then((data)=> window.location.href = data.redirect)
+        .catch((err) => console.log(err))
+    })
+
+</script>

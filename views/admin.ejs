@@ -1,0 +1,39 @@
+
+<%- include('./partials/header.ejs') %> 
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="container text-center pt-4">
+      <button class="btn btn-outline-primary">
+          <a href="/admin-login/logout" class="nav-link">LOGOUT</a>
+      </button>
+  </div>
+
+    <h1 class="container text-center pt-4">
+        Messages from: 
+    </h1>
+    <div class="pt-4">
+        <table class=" table table-hover container border border-dark">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">mail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if(msgs.length>0){ %>
+                 <% msgs.forEach(msg => { %>
+                  <tr>
+                      <th scope="row" class="name"><a class="nav-link" href="/admin/<%= msg._id %>"><%= msg.name %></a></th>
+                    </a>
+                    <td class="mail"><a class="nav-link" href="/admin/<%= msg._id %>"><%= msg.mail %></a></td>
+                  </tr>
+                  <% }) %>
+              <% } else { %>
+                    <p>No messages to display.</p>
+              <% } %> 
+            </tbody>
+          </table>
+    </div>
+    
+    <%- include('./partials/footer.ejs') %>
+
